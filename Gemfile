@@ -5,8 +5,12 @@ gem 'rails', '3.2.6'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
-
+gem 'mysql2', '0.3.10' 
+gem 'devise'
+gem 'cancan'
+gem 'haml'
+gem 'hpricot'
+gem 'ruby_parser'
 
 # Gems used only for assets and not required
 # in production environments by default.

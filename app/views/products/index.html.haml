@@ -1,0 +1,27 @@
+%h1 Listing products 
+%table
+  %tr
+    %th Name
+    %th Uid
+    %th Category
+    %th description
+    %th price
+    %th location
+    %th is_mobile
+    %th
+    %th
+    %th
+  - @products.each do |product|
+    %tr
+      %td= product.name
+      %td= product.uid
+      %td= product.category
+      %td= product.description
+      %td= product.price
+      %td= product.location
+      %td= product.is_mobile
+      %td= link_to 'Show', product 
+      %td= link_to 'Edit', edit_product_path(product)
+      %td= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' }
+%br/
+= link_to 'New Category', new_product_path

@@ -1,4 +1,13 @@
 TransMarket::Application.routes.draw do
+  devise_for :users
+
+  devise_for :models
+
+  resources :categories
+
+  resources :products
+  root :to => 'categories#index'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
