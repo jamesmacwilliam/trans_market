@@ -12,6 +12,7 @@ gem 'haml'
 gem 'hpricot'
 gem 'ruby_parser'
 gem 'thin'
+gem 'activerecord-postgresql-adapter'
 
 # Gems used only for assets and not required
 # in production environments by default.
