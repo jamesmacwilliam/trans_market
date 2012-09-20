@@ -1,7 +1,7 @@
 TransMarket.Views.Categories ||= {}
 
 class TransMarket.Views.Categories.EditView extends Backbone.View
-  template : JST["backbone/templates/categories/edit"]
+  template : ich.category_edit
 
   events :
     "submit #edit-category" : "update"
@@ -17,6 +17,7 @@ class TransMarket.Views.Categories.EditView extends Backbone.View
     )
 
   render : ->
+    console.log @model
     $(@el).html(@template(@model.toJSON() ))
 
     this.$("form").backboneLink(@model)

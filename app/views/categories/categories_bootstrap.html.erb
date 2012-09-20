@@ -3,8 +3,7 @@
 <script type="text/javascript">
 $(function() {
  TransMarket.router = new TransMarket.Routers.CategoriesRouter({categories:  <%= @categories.to_json.html_safe -%>});
- TransMarket.categories = new TransMarket.CategoriesCollection
+ TransMarket.categories = new TransMarket.Collections.CategoriesCollection
  TransMarket.initialize_backbone();
- Backbone.history.start();
 });
 </script>

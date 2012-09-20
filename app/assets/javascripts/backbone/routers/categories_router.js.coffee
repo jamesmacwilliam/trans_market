@@ -1,6 +1,6 @@
 class TransMarket.Routers.CategoriesRouter extends Backbone.Router
   initialize: (options) ->
-    @categories = new TransMarket.Collections.CategoriesCollection()
+    @categories = new TransMarket.Collections.CategoriesCollection(options.categories)
     @categories.reset options.categories
 
   routes:
@@ -25,7 +25,7 @@ class TransMarket.Routers.CategoriesRouter extends Backbone.Router
     $("#categories").html(@view.render().el)
 
   edit: (id) ->
-    console.log id
     category = new TransMarket.Category(id: id)
+    console.log category
     @view = new TransMarket.Views.Categories.EditView(model: category)
     $("#categories").html(@view.render().el)
