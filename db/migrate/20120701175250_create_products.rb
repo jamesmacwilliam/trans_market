@@ -7,6 +7,7 @@ class CreateProducts < ActiveRecord::Migration
       t.string :price
       t.string :location
       t.boolean :is_mobile
+      t.string :category_id
 
       t.timestamps
     end

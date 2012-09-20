@@ -5,7 +5,7 @@ class CategoriesController < ApplicationController
     @categories = Category.all
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html { bootstrap(params) }
       format.json { render json: @categories }
     end
   end
@@ -25,6 +25,7 @@ class CategoriesController < ApplicationController
   # GET /categories/new.json
   def new
     @category = Category.new
+    @categories = Category.all
 
     respond_to do |format|
       format.html # new.html.erb
@@ -35,22 +36,28 @@ class CategoriesController < ApplicationController
   # GET /categories/1/edit
   def edit
     @category = Category.find(params[:id])
+    bootstrap(params)
   end
 
   # POST /categories
   # POST /categories.json
   def create
+   params[:category]['products'] = [
+     {name: 'first', description: 'last'},
+     {name: 'first', description: 'last'}
+   ]
+    puts params.inspect
     @category = Category.new(params[:category])
 
-    respond_to do |format|
-      if @category.save
-        format.html { redirect_to @category, notice: 'Category was successfully created.' }
-        format.json { render json: @category, status: :created, location: @category }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @category.errors, status: :unprocessable_entity }
-      end
-    end
+   respond_to do |format|
+     if @category.save
+       format.html { redirect_to @category, notice: 'Category was successfully created.' }
+       format.json { render json: @category, status: :created, location: @category }
+     else
+       format.html { render action: "new" }
+       format.json { render json: @category.errors, status: :unprocessable_entity }
+     end
+   end
   end
 
   # PUT /categories/1
@@ -79,5 +86,9 @@ class CategoriesController < ApplicationController
       format.html { redirect_to categories_url }
       format.json { head :no_content }
     end
+  end
+
+  def bootstrap(prms)
+    render template: 'categories/categories_bootstrap'
   end
 end

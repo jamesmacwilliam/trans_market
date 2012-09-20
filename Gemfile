@@ -13,6 +13,9 @@ gem 'hpricot'
 gem 'ruby_parser'
 gem 'thin'
 gem 'activerecord-postgresql-adapter'
+gem 'rails-backbone'
+gem 'underscore-rails'
+gem 'mustache'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -27,6 +30,10 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'rspec-core', '2.10.1'
+gem 'rspec-rails', '2.10.1'
+gem 'guard'
+gem 'rb-fsevent', '~> 0.9.1'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

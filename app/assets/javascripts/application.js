@@ -10,6 +10,23 @@
 // WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
 // GO AFTER THE REQUIRES BELOW.
 //
+// 3rd party libs - required from /vendor --
+//= require ican-haz-no-mustache
+//= require mustache
+
 //= require jquery
 //= require jquery_ujs
+//= require underscore
+//= require backbone
+//= require backbone_rails_sync
+//= require backbone_datalink
+//= require backbone/trans_market
 //= require_tree .
+
+// Application code --
+//= require backbone/templates/templates
+//= require_tree ./backbone/models
+//= require_tree ./collections
+//= require_tree ./backbone/routers
+//= require_tree ./backbone/views
+//= require_tree ./backbone/support
